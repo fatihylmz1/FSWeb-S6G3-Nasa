@@ -3,6 +3,8 @@ import axios from "axios";
 import "./App.css";
 import ImageViewer from "./components/imageViewer";
 import VideoViewer from "./components/videoViewer";
+import NoAnimationExample from "./components/Tabs";
+import AdvancedExample from "./components/Pagination";
 function App() {
   const [data, setData] = useState(null);
   const myAPIKey = "xw29T4z9bH88knauEqrKshnALDDnhXCU7GWXW3y5";
@@ -29,8 +31,11 @@ function App() {
   }, [date]);
 
   return (
+
     <div className="App">
+      <NoAnimationExample />
       <input
+        className="takvim"
         type="date"
         value={date}
         onChange={(e) => setDate(e.target.value)}
@@ -46,6 +51,7 @@ function App() {
       ) : (
         "Loading..."
       )}
+      <AdvancedExample />
     </div>
   );
 }
